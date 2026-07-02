@@ -1,19 +1,28 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Create Post</title>
-</head>
-<body>
-    <h1>Create Post</h1>
-    <p>This is the CREATE POST page.</p>
+{% extends 'base.html' %}
+{% load static %}
 
-    <form method="post" enctype="multipart/form-data">
+{% block title %}Create Post | Philips Fitness{% endblock %}
+
+{% block content %}
+<section class="page-hero">
+  <div class="container">
+    <p class="eyebrow">Community</p>
+    <h1>Create a new club post.</h1>
+    <p>
+      Share training updates, match notes, or club news with the Archipelago-Rugby community.
+    </p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="form-card">
+      <form method="post">
         {% csrf_token %}
         {{ form.as_p }}
-        <button type="submit">Submit</button>
-    </form>
-
-    <p><a href="/community/">Back to community feed</a></p>
-</body>
-</html>
+        <button class="btn btn-primary" type="submit">Publish post</button>
+      </form>
+    </div>
+  </div>
+</section>
+{% endblock %}
