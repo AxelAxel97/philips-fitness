@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Community - Philips Fitness</title>
+</head>
+<body>
+    <h1>Community Success Feed</h1>
+
+    <p><a href="{% url 'create_post' %}">Create a success post</a></p>
+
+    {% for post in posts %}
+        <hr>
+        <h3>{{ post.user.username }}</h3>
+        <p>{{ post.content }}</p>
+        <small>{{ post.created_at }}</small>
+
+        {% if post.image %}
+            <div>
+                <img src="{{ post.image.url }}" alt="Success post image" width="300">
+            </div>
+        {% endif %}
+    {% empty %}
+        <p>No success posts yet.</p>
+    {% endfor %}
+</body>
+</html>
