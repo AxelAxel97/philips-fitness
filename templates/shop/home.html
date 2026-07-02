@@ -1,12 +1,46 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Philips Fitness</title>
-</head>
-<body>
-    <h1>Welcome to Philips Fitness</h1>
-    <p>Your Django fitness subscription app is running.</p>
-    <p><a href="/shop/">Go to Shop</a></p>
-</body>
-</html>
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Home | Philips Fitness{% endblock %}
+
+{% block content %}
+<section class="hero-section">
+  <div class="container hero-grid">
+    <div class="hero-copy">
+      <p class="eyebrow">Archipelago-Rugby</p>
+      <h1>Strong rugby energy from the edge of the islands.</h1>
+      <p>
+        Philips Fitness brings together club spirit, community updates, and a simple
+        shopping experience for players, supporters, and members.
+      </p>
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="/community/">Explore Community</a>
+        <a class="btn btn-secondary" href="/shop/">Visit Shop</a>
+      </div>
+    </div>
+
+    <div class="hero-media">
+      <img src="{% static 'images/hero-rugby.jpg' %}" alt="Rugby players training outdoors near the coast">
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container card-grid">
+    <article class="info-card">
+      <h2>Community</h2>
+      <p>Read club updates, follow posts, and stay connected with the team.</p>
+    </article>
+
+    <article class="info-card">
+      <h2>Shop</h2>
+      <p>Browse kit, merchandise, and products for supporters and members.</p>
+    </article>
+
+    <article class="info-card">
+      <h2>Members</h2>
+      <p>Logged-in users can access extra content and member-only actions.</p>
+    </article>
+  </div>
+</section>
+{% endblock %}

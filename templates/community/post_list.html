@@ -1,27 +1,35 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Community - Philips Fitness</title>
-</head>
-<body>
-    <h1>Community Success Feed</h1>
+{% extends 'base.html' %}
+{% load static %}
 
-    <p><a href="{% url 'create_post' %}">Create a success post</a></p>
+{% block title %}Community | Philips Fitness{% endblock %}
 
+{% block content %}
+<section class="page-hero">
+  <div class="container">
+    <p class="eyebrow">Community</p>
+    <h1>Club updates, match talk, and member stories.</h1>
+    <p>
+      Keep up with the latest posts from Archipelago-Rugby and stay connected with the club.
+    </p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container post-list">
     {% for post in posts %}
-        <hr>
-        <h3>{{ post.user.username }}</h3>
+      <article class="post-card">
+        <div class="post-meta">
+          <span>{{ post.created_on|date:"d M Y" }}</span>
+        </div>
+        <h2>{{ post.title }}</h2>
         <p>{{ post.content }}</p>
-        <small>{{ post.created_at }}</small>
-
-        {% if post.image %}
-            <div>
-                <img src="{{ post.image.url }}" alt="Success post image" width="300">
-            </div>
-        {% endif %}
+      </article>
     {% empty %}
-        <p>No success posts yet.</p>
+      <article class="post-card">
+        <h2>No posts yet</h2>
+        <p>Once club updates are published, they’ll appear here.</p>
+      </article>
     {% endfor %}
-</body>
-</html>
+  </div>
+</section>
+{% endblock %}

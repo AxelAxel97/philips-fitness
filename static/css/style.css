@@ -207,3 +207,51 @@ img {
     height: 340px;
   }
 }
+.page-hero {
+  padding: 4rem 0 1.5rem;
+}
+
+.page-hero h1 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: clamp(2.2rem, 5vw, 4rem);
+  line-height: 1;
+  margin: 0 0 1rem;
+}
+
+.page-hero p {
+  max-width: 60ch;
+  color: var(--muted);
+  line-height: 1.7;
+}
+
+.post-list {
+  display: grid;
+  gap: 1rem;
+  padding-bottom: 4rem;
+}
+
+.post-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  padding: 1.4rem;
+  box-shadow: var(--shadow);
+}
+
+.post-card h2 {
+  font-family: 'Montserrat', sans-serif;
+  margin: 0.3rem 0 0.8rem;
+}
+
+.post-card p {
+  color: var(--muted);
+  line-height: 1.7;
+}
+
+.post-meta {
+  font-size: 0.82rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--primary);
+  font-weight: 700;
+}
