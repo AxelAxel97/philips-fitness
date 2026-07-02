@@ -1,12 +1,34 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Shop</title>
-</head>
-<body>
-    <h1>Shop Page</h1>
-    <p>This is the SHOP page.</p>
-    <p><a href="/community/">Go to community feed</a></p>
-</body>
-</html>
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Shop | Philips Fitness{% endblock %}
+
+{% block content %}
+<section class="page-hero">
+  <div class="container">
+    <p class="eyebrow">Shop</p>
+    <h1>Club kit, training gear, and supporter essentials.</h1>
+    <p>
+      Browse the Philips Fitness shop for products that suit the Archipelago-Rugby community.
+    </p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container product-grid">
+    {% for product in products %}
+      <article class="product-card">
+        <img src="{{ product.image.url }}" alt="{{ product.name }}">
+        <h2>{{ product.name }}</h2>
+        <p>{{ product.description }}</p>
+        <p class="price">£{{ product.price }}</p>
+      </article>
+    {% empty %}
+      <article class="product-card">
+        <h2>No products yet</h2>
+        <p>Add products to show them here.</p>
+      </article>
+    {% endfor %}
+  </div>
+</section>
+{% endblock %}
