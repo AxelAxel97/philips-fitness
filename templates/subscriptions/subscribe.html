@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<section class="container py-5">
+    <h1>Join Philips Fitness Premium</h1>
+    <p>Unlock premium exercise plans, premium nutrition plans, and subscriber-only community features.</p>
+
+    <form action="{% url 'create_checkout_session' %}" method="post">
+        {% csrf_token %}
+        <button type="submit" class="btn btn-dark">Subscribe Now</button>
+    </form>
+</section>
+{% endblock %}

@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<section class="container py-5">
+    <h1>Subscription Cancelled</h1>
+    <p>Your checkout was cancelled. You can try again whenever you're ready.</p>
+    <a href="{% url 'subscribe' %}" class="btn btn-secondary">Back to Subscription Page</a>
+</section>
+{% endblock %}

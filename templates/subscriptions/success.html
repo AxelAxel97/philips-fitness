@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<section class="container py-5">
+    <h1>Subscription Successful</h1>
+    <p>Your premium subscription is now active.</p>
+    <a href="{% url 'community' %}" class="btn btn-success">Go to Community</a>
+</section>
+{% endblock %}
