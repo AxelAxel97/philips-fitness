@@ -1,7 +1,7 @@
 {% extends 'base.html' %}
 {% load static %}
 
-{% block title %}Community | Philips Fitness{% endblock %}
+{% block title %}Community | Archipelago Rugby{% endblock %}
 
 {% block content %}
 <section class="page-hero">
@@ -9,7 +9,7 @@
     <p class="eyebrow">Community</p>
     <h1>Club updates, match talk, and member stories.</h1>
     <p>
-      Keep up with the latest posts from Archipelago-Rugby and stay connected with the club.
+      Keep up with the latest posts from Archipelago Rugby and stay connected with the club.
     </p>
   </div>
 </section>
@@ -19,17 +19,22 @@
     {% for post in posts %}
       <article class="post-card">
         <div class="post-meta">
-          <span>{{ post.created_on|date:"d M Y" }}</span>
+          <span>{{ post.user.username }}</span>
+          <span>{{ post.created_at|date:"d M Y" }}</span>
         </div>
-        <h2>{{ post.title }}</h2>
+
         <p>{{ post.content }}</p>
+
+        {% if post.image %}
+          <img src="{{ post.image.url }}" alt="Community post image">
+        {% endif %}
       </article>
     {% empty %}
       <article class="post-card">
         <h2>No posts yet</h2>
-        <p>Once club updates are published, they’ll appear here.</p>
+        <p>Once club updates or member stories are published, they’ll appear here.</p>
       </article>
     {% endfor %}
-  </div>
+    </div>
 </section>
 {% endblock %}

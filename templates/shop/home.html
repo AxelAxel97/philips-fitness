@@ -1,20 +1,21 @@
 {% extends 'base.html' %}
 {% load static %}
 
-{% block title %}Home | Philips Fitness{% endblock %}
+{% block title %}Home | Archipelago Rugby{% endblock %}
 
 {% block content %}
 <section class="hero-section">
   <div class="container hero-grid">
     <div class="hero-copy">
-      <p class="eyebrow">Archipelago-Rugby</p>
+      <p class="eyebrow">Archipelago Rugby</p>
       <h1>Strong rugby energy from the edge of the islands.</h1>
       <p>
-        Philips Fitness brings together club spirit, community updates, and a simple
+        Archipelago Rugby brings together club spirit, community updates, and a simple
         shopping experience for players, supporters, and members.
       </p>
       <div class="hero-actions">
-        <a class="btn btn-primary" href="/community/">Explore Community</a>
+        <a class="btn btn-primary" href="/subscriptions/">Join Premium</a>
+        <a class="btn btn-secondary" href="/community/">Explore Community</a>
         <a class="btn btn-secondary" href="/shop/">Visit Shop</a>
       </div>
     </div>
@@ -41,6 +42,33 @@
       <h2>Members</h2>
       <p>Logged-in users can access extra content and member-only actions.</p>
     </article>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <p class="eyebrow">Featured Products</p>
+    <h2>Popular picks from the club shop.</h2>
+
+    <div class="product-grid">
+      {% for product in featured_products %}
+        <article class="product-card">
+          {% if product.image %}
+            <img src="{{ product.image.url }}" alt="{{ product.name }}">
+          {% else %}
+            <img src="{% static 'images/hero-rugby.jpg' %}" alt="{{ product.name }}">
+          {% endif %}
+          <h3>{{ product.name }}</h3>
+          <p>{{ product.description }}</p>
+          <p class="price">£{{ product.price }}</p>
+        </article>
+      {% empty %}
+        <article class="product-card">
+          <h3>No featured products yet</h3>
+          <p>Add products in Django admin and they will appear here.</p>
+        </article>
+      {% endfor %}
+    </div>
   </div>
 </section>
 {% endblock %}

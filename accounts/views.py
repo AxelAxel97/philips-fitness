@@ -15,7 +15,7 @@ def signup_view(request):
             user = form.save()
             Profile.objects.create(user=user)
             login(request, user)
-            messages.success(request, 'Welcome to Philips Fitness!')
+            messages.success(request, 'Welcome to Archipelago Rugby!')
             return redirect('profile')
     else:
         form = SignUpForm()

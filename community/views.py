@@ -3,9 +3,9 @@ from django.contrib.auth.decorators import login_required
 from django.contrib import messages
 from .models import SuccessPost
 from .forms import SuccessPostForm
+from accounts.models import Profile
 
 
-@login_required
 def post_list(request):
     posts = SuccessPost.objects.all()
     return render(request, 'community/post_list.html', {'posts': posts})
@@ -13,7 +13,7 @@ def post_list(request):
 
 @login_required
 def create_post(request):
-    profile = request.user.profile
+    profile, created = Profile.objects.get_or_create(user=request.user)
 
     if not profile.is_subscriber:
         messages.error(request, 'Only subscribers can create success posts.')

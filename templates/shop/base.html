@@ -1,12 +1,45 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Philips Fitness</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Archipelago Rugby{% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Montserrat:wght@600;700;800&display=swap" rel="stylesheet">
 </head>
 <body>
-    <h1>Welcome to Philips Fitness!</h1>
-    <p>Your Django fitness subscription app is running.</p>
-    <p><a href="/shop/">Go to Shop</a></p>
+    <header class="site-header">
+        <div class="container nav-wrap">
+            <a href="/" class="brand">
+                <span class="brand-mark">AR</span>
+                <span>Archipelago Rugby</span>
+            </a>
+
+            <nav class="site-nav">
+                <a href="/">Home</a>
+                <a href="/community/">Community</a>
+                <a href="/shop/">Shop</a>
+                <a href="/subscriptions/">Become a Sponsor</a>
+                <a href="/admin/">Admin</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        {% block content %}
+        {% endblock %}
+    </main>
+
+    <footer class="site-footer">
+        <div class="container">
+            <p>&copy; 2026 Archipelago Rugby. All rights reserved.</p>
+            <div class="site-nav">
+                <a href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer">Facebook</a>
+                <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer">Instagram</a>
+                <a href="https://twitter.com/" target="_blank" rel="noopener noreferrer">Twitter</a>
+            </div>
+        </div>
+    </footer>
 </body>
 </html>

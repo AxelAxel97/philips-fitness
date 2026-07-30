@@ -23,9 +23,12 @@ body {
   font-family: 'Inter', sans-serif;
   color: var(--text);
   background:
-    radial-gradient(circle at top right, rgba(10, 92, 79, 0.10), transparent 28%),
-    linear-gradient(180deg, #f8fbfc 0%, #eef4f7 100%);
+    linear-gradient(rgba(248, 251, 252, 0.65), rgba(238, 244, 247, 0.72)),
+    url("../images/archipelago-bg.jpg") center center / cover no-repeat fixed;
+  min-height: 100vh;
 }
+
+
 
 a {
   color: inherit;

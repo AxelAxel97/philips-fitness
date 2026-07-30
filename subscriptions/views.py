@@ -11,7 +11,6 @@ from accounts.models import Profile
 stripe.api_key = settings.STRIPE_SECRET_KEY
 
 
-@login_required
 def subscribe_page(request):
     return render(request, 'subscriptions/subscribe.html', {
         'stripe_public_key': settings.STRIPE_PUBLIC_KEY
@@ -20,6 +19,10 @@ def subscribe_page(request):
 
 @login_required
 def create_checkout_session(request):
+    if request.method != 'POST':
+        messages.error(request, 'Invalid request method.')
+        return redirect('subscribe')
+
     try:
         checkout_session = stripe.checkout.Session.create(
             payment_method_types=['card'],

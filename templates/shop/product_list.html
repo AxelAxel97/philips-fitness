@@ -1,7 +1,7 @@
 {% extends 'base.html' %}
 {% load static %}
 
-{% block title %}Shop | Philips Fitness{% endblock %}
+{% block title %}Shop | Archipelago Rugby{% endblock %}
 
 {% block content %}
 <section class="page-hero">
@@ -9,7 +9,7 @@
     <p class="eyebrow">Shop</p>
     <h1>Club kit, training gear, and supporter essentials.</h1>
     <p>
-      Browse the Philips Fitness shop for products that suit the Archipelago-Rugby community.
+      Browse the Archipelago Rugby shop for products that suit the Archipelago Rugby community.
     </p>
   </div>
 </section>
@@ -18,7 +18,11 @@
   <div class="container product-grid">
     {% for product in products %}
       <article class="product-card">
-        <img src="{{ product.image.url }}" alt="{{ product.name }}">
+        {% if product.image %}
+          <img src="{{ product.image.url }}" alt="{{ product.name }}">
+        {% else %}
+          <img src="{% static 'images/hero-rugby.jpg' %}" alt="{{ product.name }}">
+        {% endif %}
         <h2>{{ product.name }}</h2>
         <p>{{ product.description }}</p>
         <p class="price">£{{ product.price }}</p>
@@ -26,7 +30,7 @@
     {% empty %}
       <article class="product-card">
         <h2>No products yet</h2>
-        <p>Add products to show them here.</p>
+        <p>Add products in Django admin to show them here.</p>
       </article>
     {% endfor %}
   </div>

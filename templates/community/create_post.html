@@ -1,7 +1,7 @@
 {% extends 'base.html' %}
 {% load static %}
 
-{% block title %}Create Post | Philips Fitness{% endblock %}
+{% block title %}Create Post | Archipelago Rugby{% endblock %}
 
 {% block content %}
 <section class="page-hero">
@@ -9,7 +9,7 @@
     <p class="eyebrow">Community</p>
     <h1>Create a new club post.</h1>
     <p>
-      Share training updates, match notes, or club news with the Archipelago-Rugby community.
+      Share training updates, match notes, or club news with the Archipelago Rugby community.
     </p>
   </div>
 </section>
@@ -17,7 +17,7 @@
 <section class="section">
   <div class="container">
     <div class="form-card">
-      <form method="post">
+      <form method="post" enctype="multipart/form-data">
         {% csrf_token %}
         {{ form.as_p }}
         <button class="btn btn-primary" type="submit">Publish post</button>
