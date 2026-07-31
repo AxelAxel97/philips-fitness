@@ -3,7 +3,7 @@
   --surface: #ffffff;
   --surface-soft: #eaf2f6;
   --text: #10212f;
-  --muted: #5b6a78;
+  --muted: #2f4356;
   --primary: #0a5c4f;
   --primary-dark: #06483e;
   --accent: #c96d2d;
@@ -23,12 +23,10 @@ body {
   font-family: 'Inter', sans-serif;
   color: var(--text);
   background:
-    linear-gradient(rgba(248, 251, 252, 0.65), rgba(238, 244, 247, 0.72)),
+    linear-gradient(rgba(248, 251, 252, 0.84), rgba(238, 244, 247, 0.9)),
     url("../images/archipelago-bg.jpg") center center / cover no-repeat fixed;
   min-height: 100vh;
 }
-
-
 
 a {
   color: inherit;
@@ -49,7 +47,7 @@ img {
   position: sticky;
   top: 0;
   z-index: 20;
-  background: rgba(255, 255, 255, 0.82);
+  background: rgba(255, 255, 255, 0.88);
   backdrop-filter: blur(14px);
   border-bottom: 1px solid rgba(16, 33, 47, 0.08);
 }
@@ -96,7 +94,7 @@ img {
 .site-footer {
   padding: 2rem 0 3rem;
   color: var(--muted);
-  font-size: 0.95rem;
+  font-size: 1rem;
 }
 
 .hero-section {
@@ -113,7 +111,7 @@ img {
 .eyebrow {
   text-transform: uppercase;
   letter-spacing: 0.16em;
-  font-size: 0.78rem;
+  font-size: 0.82rem;
   font-weight: 700;
   color: var(--primary);
   margin: 0 0 1rem;
@@ -128,9 +126,10 @@ img {
 
 .hero-copy p {
   max-width: 62ch;
-  line-height: 1.7;
+  line-height: 1.75;
   color: var(--muted);
-  font-size: 1.05rem;
+  font-size: 1.1rem;
+  font-weight: 500;
 }
 
 .hero-actions {
@@ -161,7 +160,7 @@ img {
 
 .btn-secondary {
   border: 1px solid var(--border);
-  background: rgba(255,255,255,0.7);
+  background: rgba(255, 255, 255, 0.78);
 }
 
 .hero-media img {
@@ -197,7 +196,9 @@ img {
 
 .info-card p {
   color: var(--muted);
-  line-height: 1.6;
+  line-height: 1.7;
+  font-size: 1rem;
+  font-weight: 500;
 }
 
 @media (max-width: 900px) {
@@ -210,6 +211,7 @@ img {
     height: 340px;
   }
 }
+
 .page-hero {
   padding: 4rem 0 1.5rem;
 }
@@ -224,7 +226,9 @@ img {
 .page-hero p {
   max-width: 60ch;
   color: var(--muted);
-  line-height: 1.7;
+  line-height: 1.75;
+  font-size: 1.08rem;
+  font-weight: 500;
 }
 
 .post-list {
@@ -248,16 +252,19 @@ img {
 
 .post-card p {
   color: var(--muted);
-  line-height: 1.7;
+  line-height: 1.75;
+  font-size: 1rem;
+  font-weight: 500;
 }
 
 .post-meta {
-  font-size: 0.82rem;
+  font-size: 0.84rem;
   text-transform: uppercase;
   letter-spacing: 0.12em;
   color: var(--primary);
   font-weight: 700;
 }
+
 .form-card {
   background: var(--surface);
   border: 1px solid var(--border);
@@ -269,6 +276,9 @@ img {
 
 .form-card p {
   margin-bottom: 1rem;
+  color: var(--muted);
+  line-height: 1.7;
+  font-weight: 500;
 }
 
 .form-card label {
@@ -288,6 +298,7 @@ img {
   margin-bottom: 1rem;
   background: white;
 }
+
 .product-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
@@ -324,7 +335,9 @@ img {
 
 .product-card p {
   color: var(--muted);
-  line-height: 1.6;
+  line-height: 1.7;
+  font-size: 1rem;
+  font-weight: 500;
 }
 
 .price {
@@ -336,7 +349,7 @@ img {
 .site-footer {
   padding: 2rem 0 3rem;
   color: var(--muted);
-  font-size: 0.95rem;
+  font-size: 1rem;
 }
 
 .site-footer .footer-inner {
@@ -352,6 +365,8 @@ img {
 .site-footer .footer-inner p {
   margin: 0 0 1rem;
   text-align: center;
+  color: var(--muted);
+  font-weight: 500;
 }
 
 .site-footer .social-icons {
@@ -405,6 +420,3 @@ img {
   width: 100% !important;
   margin: 0 auto !important;
 }
-
-
-
