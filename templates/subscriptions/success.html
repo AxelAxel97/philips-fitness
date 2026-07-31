@@ -1,9 +1,17 @@
 {% extends 'base.html' %}
 
+{% block title %}Sponsorship Confirmed | Archipelago Rugby{% endblock %}
+
 {% block content %}
-<section class="container py-5">
-    <h1>Subscription Successful</h1>
-    <p>Your premium subscription is now active.</p>
-    <a href="{% url 'community' %}" class="btn btn-success">Go to Community</a>
+<section class="page-hero">
+    <div class="container">
+        <p class="eyebrow">Thank You</p>
+        <h1>Your sponsorship is confirmed.</h1>
+        <p>
+            Thank you for supporting Archipelago Rugby. Your sponsorship now helps
+            support club development, training, and the wider community.
+        </p>
+        <a href="{% url 'community' %}" class="btn btn-primary">Go to Community</a>
+    </div>
 </section>
 {% endblock %}

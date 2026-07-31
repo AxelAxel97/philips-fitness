@@ -1,9 +1,17 @@
 {% extends 'base.html' %}
 
+{% block title %}Sponsorship Cancelled | Archipelago Rugby{% endblock %}
+
 {% block content %}
-<section class="container py-5">
-    <h1>Subscription Cancelled</h1>
-    <p>Your checkout was cancelled. You can try again whenever you're ready.</p>
-    <a href="{% url 'subscribe' %}" class="btn btn-secondary">Back to Subscription Page</a>
+<section class="page-hero">
+    <div class="container">
+        <p class="eyebrow">Checkout Cancelled</p>
+        <h1>Your sponsorship was not completed.</h1>
+        <p>
+            Your checkout was cancelled before payment was completed. You can return
+            whenever you are ready to support the club.
+        </p>
+        <a href="{% url 'subscribe' %}" class="btn btn-secondary">Back to Sponsorship Page</a>
+    </div>
 </section>
 {% endblock %}

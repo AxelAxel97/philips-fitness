@@ -1,18 +1,39 @@
 {% extends 'base.html' %}
 
-{% block title %}Subscribe | Archipelago Rugby{% endblock %}
+{% block title %}Become a Sponsor | Archipelago Rugby{% endblock %}
 
 {% block content %}
-<section class="container py-5">
-    <h1>Join Archipelago Rugby Premium</h1>
-    <p>
-        Unlock premium exercise plans, premium nutrition plans,
-        and subscriber-only community features.
-    </p>
+<section class="page-hero">
+    <div class="container">
+        <p class="eyebrow">Support the Club</p>
+        <h1>Become an Archipelago Rugby sponsor.</h1>
+        <p>
+            Support the club, help fund training and matchday development,
+            and unlock sponsor-only access across the site.
+        </p>
+    </div>
+</section>
 
-    <form action="{% url 'create_checkout_session' %}" method="post">
-        {% csrf_token %}
-        <button type="submit" class="btn btn-dark">Subscribe Now</button>
-    </form>
+<section class="section">
+    <div class="container">
+        <div class="form-card">
+            <h2>Sponsorship Benefits</h2>
+            <p>
+                Sponsors help strengthen the club while gaining access to exclusive
+                content, supporter perks, and member-only community features.
+            </p>
+
+            <ul>
+                <li>Access to supporter-only content</li>
+                <li>Exclusive club updates and features</li>
+                <li>Stronger connection with the Archipelago Rugby community</li>
+            </ul>
+
+            <form action="{% url 'create_checkout_session' %}" method="post">
+                {% csrf_token %}
+                <button type="submit" class="btn btn-primary">Become a Sponsor</button>
+            </form>
+        </div>
+    </div>
 </section>
 {% endblock %}
